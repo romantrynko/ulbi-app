@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        'Open Sans',
+        'Helvetica Neue',
+        sans-serif
+}
+
+h1 {
+    margin: 15px 0;
+    font-weight: 200;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    width: 400px;
+
+}
+
+.post {
+    display: flex;
+    padding: 15px;
+    border: 1px solid rgb(230, 230, 230);
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    font-weight: 100;
+    transition: transform ease 0.3s;
+}
+
+.post:hover {
+    transform: translate(0, -5px);
+    box-shadow: 0px 11px 39px -18px rgba(0, 0, 0, 0.36);
+    background: rgb(238, 238, 238);
+    border-color: transparent
+}
+
+.noPosts {
+    display: flex;
+    justify-content: center;
+    margin: 50% 10%;
+    font-size: 40px;
+    background-color: rgb(0, 0, 0);
+    color: teal;
+    padding: 50px 0;
+    opacity: 30%;
+    border-radius: 35px;
+}
+
+.deleteBtn {
+    padding: 5px 20px;
+    color: rgb(128, 15, 0);
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid rgb(128, 36, 0);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.deleteBtn:hover {
+    background: red;
+    color: white;
+}
