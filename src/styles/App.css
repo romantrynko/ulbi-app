@@ -42,7 +42,7 @@ h1 {
 }
 
 .post:hover {
-    transform: translate(0, -5px);
+    /* transform: translate(0, -5px); */
     box-shadow: 0px 11px 39px -18px rgba(0, 0, 0, 0.36);
     background: rgb(238, 238, 238);
     border-color: transparent
@@ -58,6 +58,7 @@ h1 {
     padding: 50px 0;
     opacity: 30%;
     border-radius: 35px;
+    z-index: 0;
 }
 
 .deleteBtn {
@@ -73,4 +74,22 @@ h1 {
 .deleteBtn:hover {
     background: red;
     color: white;
+}
+
+.post-enter {
+    transform: translateX(-350px);
+}
+
+.post-enter-active {
+    transform: translateX(0px);
+    transition: all 500ms ease-in;
+}
+
+.post-exit {
+    opacity: 1;
+}
+
+.post-exit-active {
+    transform: translateX(-350px);
+    transition: all 500ms ease-in;
 }

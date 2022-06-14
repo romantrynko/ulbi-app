@@ -12,11 +12,12 @@
     padding: 25px;
     background: white;
     border-radius: 15px;
-    width: 250px;
+    width: 350px;
 }
 
 .myModal.active {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1
 }
