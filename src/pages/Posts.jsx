@@ -11,6 +11,7 @@ import { useFetching } from '../hooks/useFetching';
 import PostService from '../API/PostService';
 import { getPageCount } from '../components/utils/pages';
 import { useObserver } from '../hooks/useObserver';
+import MySelect from '../components/UI/select/MySelect';
 
 function Posts() {
   const [posts, setPosts] = useState([]);
@@ -18,7 +19,7 @@ function Posts() {
   const [modal, setModal] = useState(false);
 
   const [totalPages, setTotalPages] = useState(0);
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(5);
   const [page, setPage] = useState(1);
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
@@ -34,11 +35,11 @@ function Posts() {
 
   useObserver(lastElement, page < totalPages, isPostsLoading, () => {
     setPage(page + 1);
-  })
+  });
 
   useEffect(() => {
     fetchPosts(limit, page);
-  }, [page]);
+  }, [page, limit]);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
@@ -65,6 +66,18 @@ function Posts() {
       <hr style={{ margin: '10px 0' }} />
 
       <PostFilter filter={filter} setFilter={setFilter} />
+
+      <MySelect
+        value={limit}
+        onChange={(value) => setLimit(value)}
+        defaultValue="Elements on page"
+        options={[
+          { value: 5, name: '5' },
+          { value: 10, name: '10' },
+          { value: 25, name: '25' },
+          { value: -1, name: 'Show all' }
+        ]}
+      />
 
       {postError && <h1>Error! {postError}</h1>}
 
