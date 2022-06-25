@@ -22,11 +22,64 @@ h1 {
 #root {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .App {
-    width: 400px;
+    width: 80%;
 
+}
+
+.pagination {
+    margin: 25px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    box-sizing: border-box;
+    width: 40px;
+    text-align: center;
+    border: 1px solid teal;
+    color: teal;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 5px 0 5px 0;
+    cursor: pointer;
+}
+
+.page__current {
+    color: orange;
+    border: 2px solid orange;
+    font-weight: bold;
+}
+
+.page:hover {
+    color: white;
+    background: teal;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+
+    height: 50px;
+    width: 100vw;
+    align-items: center;
+    padding: 1 15px;
+    background: lightgray;
+}
+
+.navbar__links {
+    margin-left: auto;
+    margin-right: 20px;
+    
+}
+
+.post__btns {
+    display: flex;
+    flex-direction: column;
 }
 
 .post {
@@ -92,4 +145,9 @@ h1 {
 .post-exit-active {
     transform: translateX(-350px);
     transition: all 500ms ease-in;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
 }
